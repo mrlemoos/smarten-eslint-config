@@ -28,6 +28,6 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: yarn install --frozen-lockfile
-      - run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc && yarn publish --verbose
+      - run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc && npm publish --access public --verbose
         env:
           NPM_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
