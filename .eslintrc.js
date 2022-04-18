@@ -10,7 +10,16 @@ const NEVER = 'never';
 module.exports = {
   // Plugins que a Smarten ESLint Config está extendendo-se sob. Estas configurações
   // são aplicadas a todos os arquivos typescript, javascript e typescriptreact.
-  plugins: ['react', 'react-native', '@typescript-eslint', 'react-hooks', 'import', 'jest'],
+  plugins: [
+    'react',
+    'react-native',
+    '@typescript-eslint',
+    'react-hooks',
+    'import',
+    'jest',
+    'promise',
+    'prettier',
+  ],
 
   // Regras que serão aplicadas ao arquivo além das regras instanciadas pelos plugins.
   rules: {
@@ -50,6 +59,8 @@ module.exports = {
     'react-hooks/exhaustive-deps': WARN, // https://github.com/facebook/create-react-app/issues/6880#issuecomment-485912528
 
     // React
+    'react/destructuring-assignment': [ERROR, ALWAYS],
+    'react/jsx-props-no-spreading': ERROR,
     'react/jsx-filename-extension': [
       ERROR,
       {
@@ -66,11 +77,20 @@ module.exports = {
       },
     ],
 
+    // Promise
+    'promise/prefer-await-to-then': ERROR,
+
     // Lang
     semi: ERROR,
     '@typescript-eslint/semi': [ERROR, ALWAYS],
     '@typescript-eslint/no-explicit-any': ERROR,
-    indent: [ERROR, 2],
+    indent: [
+      ERROR,
+      2,
+      {
+        SwitchCase: 1,
+      },
+    ],
     '@typescript-eslint/triple-slash-reference': [
       ERROR,
       {
@@ -79,15 +99,14 @@ module.exports = {
         lib: NEVER,
       },
     ],
-    '@typescript-eslint/type-annotation-spacing': [
+    '@typescript-eslint/type-annotation-spacing': DISABLED,
+    camelcase: ERROR,
+    complexity: [
       ERROR,
       {
-        before: false,
-        after: true,
+        max: 8,
       },
     ],
-    camelcase: ERROR,
-    complexity: [ERROR, { max: 2 }],
     'constructor-super': ERROR,
     curly: [ERROR, 'all'],
     'default-case': ERROR,
@@ -128,13 +147,14 @@ module.exports = {
     'no-multiple-empty-lines': ERROR,
     'no-new-wrappers': ERROR,
     'no-redeclare': ERROR,
-    'no-shadow': ERROR,
+    'no-shadow': DISABLED,
+    '@typescript-eslint/no-shadow': ERROR,
     'no-trailing-spaces': DISABLED,
     'no-undef-init': ERROR,
     'no-underscore-dangle': DISABLED,
     'no-unsafe-finally': ERROR,
     'no-unused-expressions': [ERROR, { allowShortCircuit: true }],
-    'no-unused-vars': ERROR,
+    'no-unused-vars': DISABLED,
     'no-unused-labels': ERROR,
     'no-var': ERROR,
     'no-void': ERROR,
@@ -167,6 +187,7 @@ module.exports = {
     '@typescript-eslint/require-await': ERROR,
     '@typescript-eslint/await-thenable': ERROR,
     '@typescript-eslint/no-floating-promises': ERROR,
+    '@typescript-eslint/no-unused-vars': ERROR,
   },
 
   // Dados de ambiente
@@ -190,6 +211,9 @@ module.exports = {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
+    },
+    react: {
+      version: 'detect',
     },
   },
 };
