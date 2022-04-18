@@ -60,7 +60,18 @@ module.exports = {
 
     // React
     'react/destructuring-assignment': [ERROR, ALWAYS],
+    'react/button-has-type': ERROR,
+    'react/no-unescaped-entities': ERROR,
+    'react/state-in-constructor': ERROR,
+    'react/no-unstable-nested-components': ERROR,
+    'react/no-danger': ERROR,
     'react/jsx-props-no-spreading': ERROR,
+    'react/no-direct-mutation-state': ERROR,
+    'react/no-unused-prop-types': ERROR,
+    'react/no-will-update-set-state': ERROR,
+    'react/void-dom-elements-no-children': ERROR,
+    'react/no-unknown-property': ERROR,
+    'react/no-deprecated': ERROR,
     'react/jsx-filename-extension': [
       ERROR,
       {
@@ -79,6 +90,12 @@ module.exports = {
 
     // Promise
     'promise/prefer-await-to-then': ERROR,
+    'promise/no-native': ERROR,
+    'promise/no-nesting': ERROR,
+    'promise/no-return-in-finally': ERROR,
+    'promise/no-return-wrap': ERROR,
+    'promise/param-names': ERROR,
+    'promise/prefer-await-to-callbacks': ERROR,
 
     // Lang
     semi: ERROR,
