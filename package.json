@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A configuração do ESLint utilizado em todas as Startups da Smarten Venture Builder.",
   "main": ".eslintrc.js",
-  "repository": "https://github.com/smarten-venture-builder/smarten-eslint-config.git",
+  "repository": "https://github.com/mrlemoos/smarten-eslint-config.git",
   "author": "Leonardo Lemos <leonardo@smarten.com.br>",
   "license": "MIT",
   "private": false,
